@@ -77,7 +77,7 @@ export function RocketShowcase() {
                     </span>
                 </div>
                 <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#fdfbf7] mb-2">
-                    X-1 Model Rocket
+                    Alp Roketi
                 </h2>
                 <div className="flex items-center gap-4 text-[#fdfbf7]/40 font-mono text-xs">
                     <span>REV: 2.4.0</span>
@@ -176,14 +176,9 @@ export function RocketShowcase() {
                     <span>X: 12.404</span>
                     <span>Y: 00.120</span>
                  </div>
-                 <span>ROT: 0.3 RPM</span>
               </div>
 
-              {/* Sağ Üst Hedef */}
-              <div className="absolute top-6 right-6">
-                 <Crosshair className="w-8 h-8 text-[#fdfbf7]/20 group-hover:text-[#f97316]/50 transition-colors duration-500" />
-              </div>
-
+              
               {/* Alt Cetvel (Ruler) */}
               <div className="absolute bottom-0 left-0 right-0 h-8 border-t border-[#fdfbf7]/10 flex justify-between px-4 items-center font-mono text-[10px] text-[#fdfbf7]/30">
                  <span>0</span>

@@ -7,51 +7,44 @@ import { Linkedin, Fingerprint, QrCode, ShieldCheck } from "lucide-react"
 const teamMembers = [
   {
     id: "CMD-01",
-    name: "Ahmet Yılmaz",
-    role: "Takım Kaptanı",
-    department: "YÖNETİM",
-    image: "/professional-male-engineer-portrait-grayscale.jpg",
-    clearance: "Lvl 5",
+    name: "Mehmet Alper Demiray",
+    role: "Takım Danışmanı",
+    image: "/Mehmet Alper Demiray - Akdemik Danışman.jpeg",
   },
   {
     id: "AVN-01",
-    name: "Elif Demir",
-    role: "Aviyonik Lideri",
-    department: "AVİYONİK",
-    image: "/professional-female-engineer-portrait-grayscale.jpg",
-    clearance: "Lvl 4",
+    name: "Bora Cüneyt Akçalın",
+    role: "Takım Kaptanı",
+    department: "AVİYONİK & Mekanik",
+    image: "/Bora Cüneyit akçakın.jpeg",
   },
   {
     id: "STR-01",
-    name: "Mehmet Kaya",
+    name: "Muzaffer Şen",
     role: "Yapısal Lider",
     department: "MEKANİK",
-    image: "/professional-male-aerospace-engineer-portrait-gray.jpg",
-    clearance: "Lvl 4",
+    image: "/Muzaffer şen.jpeg",
   },
   {
     id: "PRP-01",
-    name: "Zeynep Arslan",
-    role: "İtki Uzmanı",
-    department: "AR-GE",
-    image: "/professional-female-scientist-portrait-grayscale.jpg",
-    clearance: "Lvl 3",
+    name: "Hüdaverdi Furkan Demirci",
+    role: "Aviyonik Lider",
+    department: "Aviyonik",
+    image: "/Hüdaverdi Furkan Demirci.jpeg",
   },
   {
     id: "SW-01",
-    name: "Can Özdemir",
-    role: "Yazılım Geliştirici",
-    department: "YAZILIM",
-    image: "/professional-male-developer-portrait-grayscale.jpg",
-    clearance: "Lvl 3",
+    name: "Yağız Muhammed Tan",
+    role: "Mekanik",
+    department: "Mekanik",
+    image: "/Yagiz_m_Tan.jpg",
   },
   {
     id: "SIM-01",
-    name: "Selin Yıldız",
-    role: "Simülasyon Müh.",
-    department: "ANALİZ",
-    image: "/professional-female-engineer-portrait-grayscale.jpg",
-    clearance: "Lvl 3",
+    name: "Arzu Sümeyye Çiftçi",
+    role: "Aviyoinik",
+    department: "Aviyonik",
+    image: "/Arzu Sümeyye çiftçi.jpeg",
   },
 ]
 
@@ -104,18 +97,6 @@ export function TeamSection() {
               {/* Kart Çerçevesi (ID Card Style) */}
               <div className="relative overflow-hidden rounded-xl border border-[#fdfbf7]/10 bg-[#0f172a]/60 backdrop-blur-sm transition-all duration-500 hover:border-[#f97316]/50 hover:bg-[#0f172a]/80 group-hover:translate-y-[-5px]">
                 
-                {/* Üst Bar (Dekoratif) */}
-                <div className="flex items-center justify-between border-b border-[#fdfbf7]/10 bg-[#0B1120]/50 px-4 py-3">
-                    <div className="flex items-center gap-2">
-                        <Fingerprint className="h-4 w-4 text-[#fdfbf7]/30" />
-                        <span className="font-mono text-[10px] tracking-widest text-[#fdfbf7]/50">{member.id}</span>
-                    </div>
-                    <div className="flex items-center gap-1 rounded bg-[#fdfbf7]/5 px-2 py-0.5">
-                        <ShieldCheck className="h-3 w-3 text-[#f97316]" />
-                        <span className="font-mono text-[10px] text-[#f97316]">{member.clearance}</span>
-                    </div>
-                </div>
-
                 {/* Fotoğraf Alanı */}
                 <div className="relative aspect-[4/5] overflow-hidden border-b border-[#fdfbf7]/10">
                   {/* Tarama Çizgisi Efekti (Scanline) */}
