@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',  // <--- BU SATIRI EKLE (HTML çıktısı için)
-  trailingSlash: true,
+  output: 'export', // Statik çıktı almaya devam et, bu Vercel için de iyi.
 
   typescript: {
     ignoreBuildErrors: true,
