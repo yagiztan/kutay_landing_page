@@ -18,6 +18,7 @@ const teamsData = {
         image: "/Mehmet Alper Demiray - Akdemik Danışman.jpeg",
         linkedin: "",
         website: "",
+        nsosyal: "",
       },
       {
         id: "AVN-01",
@@ -25,8 +26,9 @@ const teamsData = {
         role: "Takım Kaptanı",
         department: "Yönetim",
         image: "/Bora Cüneyit akçakın.jpeg",
-        linkedin: "",
+        linkedin: "https://www.linkedin.com/in/borac%C3%BCneytak%C3%A7ak%C4%B1n/",
         website: "",
+        nsosyal: "",
       },
       {
         id: "STR-01",
@@ -34,8 +36,9 @@ const teamsData = {
         role: "Yapısal Lider",
         department: "Mekanik",
         image: "/Muzaffer şen.jpeg",
-        linkedin: "",
+        linkedin: "https://www.linkedin.com/in/muzaffer-%C5%9Fen-7b4910250/",
         website: "",
+        nsosyal: "",
       },
       {
         id: "SW-01",
@@ -45,6 +48,7 @@ const teamsData = {
         image: "/Yagiz_m_Tan.jpg",
         linkedin: "https://www.linkedin.com/in/ya%C4%9F%C4%B1z-muhammed-tan-1b0154322",
         website: "https://www.yagizmtan.com/",
+        nsosyal: "https://nsosyal.com/yagiztan",
       },
       {
         id: "PRP-01",
@@ -52,17 +56,29 @@ const teamsData = {
         role: "Aviyonik Lider",
         department: "Aviyonik",
         image: "/Hüdaverdi Furkan Demirci.jpeg",
-        linkedin: "",
+        linkedin: "https://www.linkedin.com/in/h%C3%BCdaverdi-furkan-demirci-447364335/",
         website: "",
+        nsosyal: "",
       },
       {
         id: "SIM-01",
         name: "Arzu Sümeyye Çiftçi",
         role: "Yazılım Geliştirici",
-        department: "Yazılım",
+        department: "Aviyonik",
         image: "/Arzu Sümeyye çiftçi.jpeg",
-        linkedin: "",
+        linkedin: "https://www.linkedin.com/in/arzu-s%C3%BCmeyye-%C3%A7ift%C3%A7i-2867b3265/",
         website: "",
+        nsosyal: "",
+      },
+      {
+        id: "SIM-02",
+        name: "Kaan GÜL",
+        role: "Yazılım Geliştirici",
+        department: "Aviyonik",
+        image: "/Kaan_gul.jpg",
+        linkedin: "https://www.linkedin.com/in/arzu-s%C3%BCmeyye-%C3%A7ift%C3%A7i-2867b3265/",
+        website: "https://kgstech.net/vCards/kaan_gul_vcard.html",
+        nsosyal: "https://nsosyal.com/kaan_gul",
       },
     ]
   },
@@ -78,6 +94,7 @@ const teamsData = {
         image: "/Muzaffer şen.jpeg",
         linkedin: "",
         website: "",
+        nsosyal: "",
       },
       {
         id: "SW-01",
@@ -87,6 +104,7 @@ const teamsData = {
         image: "/Yagiz_m_Tan.jpg",
         linkedin: "https://www.linkedin.com/in/ya%C4%9F%C4%B1z-muhammed-tan-1b0154322",
         website: "https://www.yagizmtan.com/",
+        nsosyal: "",
       },
     ]
   },
@@ -102,6 +120,7 @@ const teamsData = {
         image: "/Hüdaverdi Furkan Demirci.jpeg",
         linkedin: "",
         website: "",
+        nsosyal: "",
       },
       {
         id: "SIM-01",
@@ -111,6 +130,7 @@ const teamsData = {
         image: "/Arzu Sümeyye çiftçi.jpeg",
         linkedin: "",
         website: "",
+        nsosyal: "",
       },
     ]
   }
@@ -245,6 +265,17 @@ export function TeamSection() {
                                     title="Website"
                                   >
                                     <Globe className="h-5 w-5" />
+                                  </a>
+                                )}
+                                {member.nsosyal && (
+                                  <a
+                                    href={member.nsosyal}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex h-10 w-10 items-center justify-center rounded-full bg-[#ffffff] text-white shadow-lg hover:bg-[#ffffff] transition-colors"
+                                    title="NSosyal Profili"
+                                  >
+                                    <img src="/n_sosyal.png" alt="NSosyal" className="h-6 w-6 object-contain" />
                                   </a>
                                 )}
                             </div>
