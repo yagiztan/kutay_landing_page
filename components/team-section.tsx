@@ -5,7 +5,6 @@ import { useRef, useState } from "react"
 import { Linkedin, QrCode, Globe } from "lucide-react"
 
 // --- VERİ YAPISI ---
-// Her takım için ayrı listeler oluşturduk.
 const teamsData = {
   kutay: {
     title: "Kutay Roket Takımı",
@@ -117,7 +116,6 @@ const teamsData = {
   }
 }
 
-// Sekme Başlıkları (Key'ler teamsData ile eşleşmeli)
 const tabs = [
   { id: "kutay", label: "KUTAY ROKET" },
   { id: "gokay", label: "GÖKAY ROKET" },
@@ -127,14 +125,11 @@ const tabs = [
 export function TeamSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
-  
-  // Hangi sekmenin aktif olduğunu tutan state
   const [activeTab, setActiveTab] = useState("kutay")
 
   return (
     <section id="team" className="relative bg-[#0B1120] px-6 py-32 overflow-hidden" ref={ref}>
       
-      {/* Arka Plan Deseni */}
       <div className="absolute inset-0 opacity-[0.03]" 
            style={{ 
              backgroundImage: 'radial-gradient(#fdfbf7 1px, transparent 1px)', 
@@ -144,7 +139,6 @@ export function TeamSection() {
 
       <div className="relative mx-auto max-w-7xl">
         
-        {/* --- BAŞLIK ALANI --- */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -163,7 +157,6 @@ export function TeamSection() {
           </h2>
         </motion.div>
 
-        {/* --- TAB (SEKME) MENÜSÜ --- */}
         <div className="flex justify-center mb-12">
           <div className="inline-flex p-1 bg-[#0f172a]/80 backdrop-blur-sm border border-[#fdfbf7]/10 rounded-xl relative">
             {tabs.map((tab) => (
@@ -172,11 +165,9 @@ export function TeamSection() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`
                   relative px-6 py-2 text-sm font-medium transition-colors duration-300 font-mono tracking-wider
-                  /* Aktifse SİYAH (veya beyaz), değilse soluk beyaz yap */
                   ${activeTab === tab.id ? "text-black" : "text-[#fdfbf7]/60 hover:text-[#fdfbf7]"}
                 `}
               >
-                {/* Seçili olanın arkasındaki turuncu kutu */}
                 {activeTab === tab.id && (
                   <motion.div
                     layoutId="activeTabBg"
@@ -184,8 +175,6 @@ export function TeamSection() {
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   />
                 )}
-                
-                {/* ÇÖZÜM BURADA: Metni 'relative z-10' ile öne taşıdık */}
                 <span className="relative z-10">
                     {tab.label}
                 </span>
@@ -194,33 +183,28 @@ export function TeamSection() {
           </div>
         </div>
 
-        {/* --- DİNAMİK İÇERİK --- */}
         <div className="min-h-[400px]">
             <AnimatePresence mode="wait">
                 <motion.div
-                    key={activeTab} // Key değişince animasyon tetiklenir
+                    key={activeTab}
                     initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
                     animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                     exit={{ opacity: 0, y: -20, filter: "blur(10px)" }}
                     transition={{ duration: 0.4 }}
                 >
-                    {/* Takım Açıklaması */}
                     <div className="text-center mb-10 max-w-2xl mx-auto">
                         <h3 className="text-2xl font-bold text-[#fdfbf7] mb-2">{teamsData[activeTab as keyof typeof teamsData].title}</h3>
                         <p className="text-[#fdfbf7]/60 font-light">{teamsData[activeTab as keyof typeof teamsData].description}</p>
                     </div>
 
-                    {/* Kart Grid */}
                     <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
-                    {teamsData[activeTab as keyof typeof teamsData].members.map((member, index) => (
+                    {teamsData[activeTab as keyof typeof teamsData].members.map((member) => (
                         <div
                         key={member.id}
                         className="group relative w-full max-w-sm"
                         >
-                        {/* Kart Çerçevesi */}
                         <div className="relative overflow-hidden rounded-xl border border-[#fdfbf7]/10 bg-[#0f172a]/60 backdrop-blur-sm transition-all duration-500 hover:border-[#f97316]/50 hover:bg-[#0f172a]/80 group-hover:translate-y-[-5px]">
                             
-                            {/* Fotoğraf Alanı */}
                             <div className="relative aspect-[4/5] overflow-hidden border-b border-[#fdfbf7]/10">
                             <div className="absolute inset-0 z-10 bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.5)_50%)] bg-[size:100%_4px] opacity-10 pointer-events-none" />
                             
@@ -232,7 +216,15 @@ export function TeamSection() {
                             
                             <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-transparent to-transparent opacity-60" />
                             
-                            <div className="absolute bottom-4 right-4 translate-y-10 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 z-20 flex gap-2">
+                            {/* --- DÜZELTİLEN KISIM --- 
+                                1. Varsayılan (Mobil): opacity-100 ve translate-y-0 (Her zaman görünür)
+                                2. lg (Masaüstü): opacity-0 ve translate-y-10 (Gizli başlar)
+                                3. lg:group-hover (Masaüstü Hover): opacity-100 ve translate-y-0 (Üzerine gelince görünür)
+                            */}
+                            <div className="absolute bottom-4 right-4 z-20 flex gap-2 transition-all duration-300 
+                                            opacity-100 translate-y-0 
+                                            lg:opacity-0 lg:translate-y-10 lg:group-hover:translate-y-0 lg:group-hover:opacity-100">
+                                
                                 {member.linkedin && (
                                   <a
                                     href={member.linkedin}
@@ -258,7 +250,6 @@ export function TeamSection() {
                             </div>
                             </div>
 
-                            {/* Bilgi Alanı */}
                             <div className="p-5 relative">
                                 <div className="absolute right-4 top-4 opacity-10">
                                     <QrCode className="w-12 h-12 text-[#fdfbf7]" />
