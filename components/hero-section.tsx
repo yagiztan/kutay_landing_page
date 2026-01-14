@@ -95,9 +95,9 @@ export function HeroSection() {
           transition={{ duration: 1, ease: "easeOut" }}
           className="mb-8 font-serif text-5xl font-bold tracking-tight text-[#fdfbf7] uppercase sm:text-7xl lg:text-9xl mix-blend-overlay opacity-90"
         >
-          Kutay Roket
+          Kutay 
           <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#fdfbf7] to-[#fdfbf7]/50">Takımı</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#fdfbf7] to-[#fdfbf7]/50">Aerospace</span>
         </motion.h1>
 
         {/* Alt Açıklama */}

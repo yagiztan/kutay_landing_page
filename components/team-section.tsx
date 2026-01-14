@@ -1,61 +1,104 @@
 "use client"
 
-import { motion, useInView } from "framer-motion"
-import { useRef } from "react"
-import { Linkedin, Fingerprint, QrCode, ShieldCheck } from "lucide-react"
+import { motion, useInView, AnimatePresence } from "framer-motion"
+import { useRef, useState } from "react"
+import { Linkedin, QrCode, Globe } from "lucide-react"
 
-const teamMembers = [
-  {
-    id: "CMD-01",
-    name: "Mehmet Alper Demiray",
-    role: "Takım Danışmanı",
-    image: "/Mehmet Alper Demiray - Akdemik Danışman.jpeg",
+// --- VERİ YAPISI ---
+// Her takım için ayrı listeler oluşturduk.
+const teamsData = {
+  kutay: {
+    title: "Kutay Roket Takımı",
+    description: "Yüksek irtifa ve ileri itki sistemleri üzerine çalışan ana roket takımımız.",
+    members: [
+      {
+        id: "CMD-01",
+        name: "Mehmet Alper Demiray",
+        role: "Takım Danışmanı",
+        department: "Danışman",
+        image: "/Mehmet Alper Demiray - Akdemik Danışman.jpeg",
+        linkedin: "",
+        website: "",
+      },
+      {
+        id: "AVN-01",
+        name: "Bora Cüneyt Akçalın",
+        role: "Takım Kaptanı",
+        department: "Yönetim",
+        image: "/Bora Cüneyit akçakın.jpeg",
+        linkedin: "",
+        website: "",
+      },
+    ]
   },
-  {
-    id: "AVN-01",
-    name: "Bora Cüneyt Akçalın",
-    role: "Takım Kaptanı",
-    department: "AVİYONİK & Mekanik",
-    image: "/Bora Cüneyit akçakın.jpeg",
+  gokay: {
+    title: "Gökay Roket Takımı",
+    description: "Orta irtifa görevleri ve otonom sistemler geliştiren alt ekibimiz.",
+    members: [
+      {
+        id: "STR-01",
+        name: "Muzaffer Şen",
+        role: "Yapısal Lider",
+        department: "Mekanik",
+        image: "/Muzaffer şen.jpeg",
+        linkedin: "",
+        website: "",
+      },
+      {
+        id: "SW-01",
+        name: "Yağız Muhammed Tan",
+        role: "Mekanik Tasarım",
+        department: "Mekanik",
+        image: "/Yagiz_m_Tan.jpg",
+        linkedin: "https://www.linkedin.com/in/ya%C4%9F%C4%B1z-muhammed-tan-1b0154322",
+        website: "https://www.yagizmtan.com/",
+      },
+    ]
   },
-  {
-    id: "STR-01",
-    name: "Muzaffer Şen",
-    role: "Yapısal Lider",
-    department: "MEKANİK",
-    image: "/Muzaffer şen.jpeg",
-  },
-  {
-    id: "PRP-01",
-    name: "Hüdaverdi Furkan Demirci",
-    role: "Aviyonik Lider",
-    department: "Aviyonik",
-    image: "/Hüdaverdi Furkan Demirci.jpeg",
-  },
-  {
-    id: "SW-01",
-    name: "Yağız Muhammed Tan",
-    role: "Mekanik",
-    department: "Mekanik",
-    image: "/Yagiz_m_Tan.jpg",
-  },
-  {
-    id: "SIM-01",
-    name: "Arzu Sümeyye Çiftçi",
-    role: "Aviyoinik",
-    department: "Aviyonik",
-    image: "/Arzu Sümeyye çiftçi.jpeg",
-  },
+  doruk: {
+    title: "Doruk Roket Takımı",
+    description: "Alçak irtifa testleri ve eğitim simülasyonlarından sorumlu ekibimiz.",
+    members: [
+      {
+        id: "PRP-01",
+        name: "Hüdaverdi Furkan Demirci",
+        role: "Aviyonik Lider",
+        department: "Aviyonik",
+        image: "/Hüdaverdi Furkan Demirci.jpeg",
+        linkedin: "",
+        website: "",
+      },
+      {
+        id: "SIM-01",
+        name: "Arzu Sümeyye Çiftçi",
+        role: "Yazılım Geliştirici",
+        department: "Yazılım",
+        image: "/Arzu Sümeyye çiftçi.jpeg",
+        linkedin: "",
+        website: "",
+      },
+    ]
+  }
+}
+
+// Sekme Başlıkları (Key'ler teamsData ile eşleşmeli)
+const tabs = [
+  { id: "kutay", label: "KUTAY ROKET" },
+  { id: "gokay", label: "GÖKAY ROKET" },
+  { id: "doruk", label: "DORUK ROKET" },
 ]
 
 export function TeamSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
+  
+  // Hangi sekmenin aktif olduğunu tutan state
+  const [activeTab, setActiveTab] = useState("kutay")
 
   return (
     <section id="team" className="relative bg-[#0B1120] px-6 py-32 overflow-hidden" ref={ref}>
       
-      {/* Arka Plan Deseni (Hexagon Grid) */}
+      {/* Arka Plan Deseni */}
       <div className="absolute inset-0 opacity-[0.03]" 
            style={{ 
              backgroundImage: 'radial-gradient(#fdfbf7 1px, transparent 1px)', 
@@ -65,12 +108,12 @@ export function TeamSection() {
 
       <div className="relative mx-auto max-w-7xl">
         
-        {/* Başlık Alanı */}
+        {/* --- BAŞLIK ALANI --- */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="mb-20 text-center"
+          className="mb-12 text-center"
         >
           <div className="flex items-center justify-center gap-3 mb-4">
              <div className="h-px w-12 bg-[#f97316]/50" />
@@ -84,67 +127,127 @@ export function TeamSection() {
           </h2>
         </motion.div>
 
-        {/* Kart Grid */}
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {teamMembers.map((member, index) => (
-            <motion.div
-              key={member.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative"
-            >
-              {/* Kart Çerçevesi (ID Card Style) */}
-              <div className="relative overflow-hidden rounded-xl border border-[#fdfbf7]/10 bg-[#0f172a]/60 backdrop-blur-sm transition-all duration-500 hover:border-[#f97316]/50 hover:bg-[#0f172a]/80 group-hover:translate-y-[-5px]">
-                
-                {/* Fotoğraf Alanı */}
-                <div className="relative aspect-[4/5] overflow-hidden border-b border-[#fdfbf7]/10">
-                  {/* Tarama Çizgisi Efekti (Scanline) */}
-                  <div className="absolute inset-0 z-10 bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.5)_50%)] bg-[size:100%_4px] opacity-10 pointer-events-none" />
-                  
-                  <img
-                    src={member.image || "/placeholder.svg"}
-                    alt={member.name}
-                    className="h-full w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110"
+        {/* --- TAB (SEKME) MENÜSÜ --- */}
+        <div className="flex justify-center mb-12">
+          <div className="inline-flex p-1 bg-[#0f172a]/80 backdrop-blur-sm border border-[#fdfbf7]/10 rounded-xl relative">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`
+                  relative px-6 py-2 text-sm font-medium transition-colors duration-300 font-mono tracking-wider
+                  /* Aktifse SİYAH (veya beyaz), değilse soluk beyaz yap */
+                  ${activeTab === tab.id ? "text-black" : "text-[#fdfbf7]/60 hover:text-[#fdfbf7]"}
+                `}
+              >
+                {/* Seçili olanın arkasındaki turuncu kutu */}
+                {activeTab === tab.id && (
+                  <motion.div
+                    layoutId="activeTabBg"
+                    className="absolute inset-0 bg-[#f97316] rounded-lg shadow-[0_0_20px_rgba(249,115,22,0.4)]"
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   />
-                  
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-transparent to-transparent opacity-60" />
-                  
-                  {/* LinkedIn Butonu (Sağ Alt Köşe) */}
-                  <div className="absolute bottom-4 right-4 translate-y-10 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 z-20">
-                    <a
-                      href="#"
-                      className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0077b5] text-white shadow-lg hover:bg-[#006396] transition-colors"
-                    >
-                      <Linkedin className="h-5 w-5" />
-                    </a>
-                  </div>
-                </div>
-
-                {/* Bilgi Alanı */}
-                <div className="p-5 relative">
-                   {/* Arka plan barkodu (Süs) */}
-                   <div className="absolute right-4 top-4 opacity-10">
-                       <QrCode className="w-12 h-12 text-[#fdfbf7]" />
-                   </div>
-
-                  <div className="mb-1 inline-flex rounded bg-[#f97316]/10 px-2 py-1 text-[10px] font-bold tracking-wider text-[#f97316] uppercase">
-                    {member.department}
-                  </div>
-                  
-                  <h3 className="mb-1 font-serif text-xl font-bold text-[#fdfbf7] tracking-tight group-hover:text-[#f97316] transition-colors">
-                    {member.name}
-                  </h3>
-                  
-                  <p className="font-mono text-xs text-[#fdfbf7]/50 tracking-wide uppercase">
-                    // {member.role}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+                )}
+                
+                {/* ÇÖZÜM BURADA: Metni 'relative z-10' ile öne taşıdık */}
+                <span className="relative z-10">
+                    {tab.label}
+                </span>
+              </button>
+            ))}
+          </div>
         </div>
+
+        {/* --- DİNAMİK İÇERİK --- */}
+        <div className="min-h-[400px]">
+            <AnimatePresence mode="wait">
+                <motion.div
+                    key={activeTab} // Key değişince animasyon tetiklenir
+                    initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+                    animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                    exit={{ opacity: 0, y: -20, filter: "blur(10px)" }}
+                    transition={{ duration: 0.4 }}
+                >
+                    {/* Takım Açıklaması */}
+                    <div className="text-center mb-10 max-w-2xl mx-auto">
+                        <h3 className="text-2xl font-bold text-[#fdfbf7] mb-2">{teamsData[activeTab as keyof typeof teamsData].title}</h3>
+                        <p className="text-[#fdfbf7]/60 font-light">{teamsData[activeTab as keyof typeof teamsData].description}</p>
+                    </div>
+
+                    {/* Kart Grid */}
+                    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
+                    {teamsData[activeTab as keyof typeof teamsData].members.map((member, index) => (
+                        <div
+                        key={member.id}
+                        className="group relative w-full max-w-sm"
+                        >
+                        {/* Kart Çerçevesi */}
+                        <div className="relative overflow-hidden rounded-xl border border-[#fdfbf7]/10 bg-[#0f172a]/60 backdrop-blur-sm transition-all duration-500 hover:border-[#f97316]/50 hover:bg-[#0f172a]/80 group-hover:translate-y-[-5px]">
+                            
+                            {/* Fotoğraf Alanı */}
+                            <div className="relative aspect-[4/5] overflow-hidden border-b border-[#fdfbf7]/10">
+                            <div className="absolute inset-0 z-10 bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.5)_50%)] bg-[size:100%_4px] opacity-10 pointer-events-none" />
+                            
+                            <img
+                                src={member.image || "/placeholder.svg"}
+                                alt={member.name}
+                                className="h-full w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110"
+                            />
+                            
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-transparent to-transparent opacity-60" />
+                            
+                            <div className="absolute bottom-4 right-4 translate-y-10 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 z-20 flex gap-2">
+                                {member.linkedin && (
+                                  <a
+                                    href={member.linkedin}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0077b5] text-white shadow-lg hover:bg-[#006396] transition-colors"
+                                    title="LinkedIn Profili"
+                                  >
+                                    <Linkedin className="h-5 w-5" />
+                                  </a>
+                                )}
+                                {member.website && (
+                                  <a
+                                    href={member.website}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f97316] text-white shadow-lg hover:bg-[#ea580c] transition-colors"
+                                    title="Website"
+                                  >
+                                    <Globe className="h-5 w-5" />
+                                  </a>
+                                )}
+                            </div>
+                            </div>
+
+                            {/* Bilgi Alanı */}
+                            <div className="p-5 relative">
+                                <div className="absolute right-4 top-4 opacity-10">
+                                    <QrCode className="w-12 h-12 text-[#fdfbf7]" />
+                                </div>
+
+                            <div className="mb-1 inline-flex rounded bg-[#f97316]/10 px-2 py-1 text-[10px] font-bold tracking-wider text-[#f97316] uppercase">
+                                {member.department}
+                            </div>
+                            
+                            <h3 className="mb-1 font-serif text-xl font-bold text-[#fdfbf7] tracking-tight group-hover:text-[#f97316] transition-colors">
+                                {member.name}
+                            </h3>
+                            
+                            <p className="font-mono text-xs text-[#fdfbf7]/50 tracking-wide uppercase">
+                                // {member.role}
+                            </p>
+                            </div>
+                        </div>
+                        </div>
+                    ))}
+                    </div>
+                </motion.div>
+            </AnimatePresence>
+        </div>
+
       </div>
     </section>
   )

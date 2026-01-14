@@ -11,9 +11,9 @@ const quickLinks = [
 ]
 
 const socialLinks = [
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Youtube, href: "#", label: "YouTube" },
+  { icon: Instagram, href: "https://www.instagram.com/kutayaerospace/", label: "Instagram" },
+  { icon: Linkedin, href: "https://l.instagram.com/?u=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fkutayroket%2F%3Futm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio%26fbclid%3DPAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGntnMroKC14mlanYq85hxSw3kz-yccd68uQfwVW2lRYwFrWLRehbSZTdbCFNo_aem_qNNbWIvYdIjWy5l_oiCg8g&e=AT3M2bZx3lt5mop3QsA-k7zJO5MG9DbZgfZrMnY4fMfri3RJFm2ujjnCACQjaMZ-3bK9qT71HsHAjW0dAQtEDZ7gdYGXSSeLJrHauk5a0w", label: "LinkedIn" },
+  { icon: Youtube, href: "https://l.instagram.com/?u=https%3A%2F%2Fyoutube.com%2F%40kutayroket1%3Fsi%3DiLr9HYQwVa-EtNBz%26fbclid%3DPAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnsqkj7_dQfNwxqnzGWQFLQY9C-dBVEhYvHZ0kIERVdO1D3T8Wt0jMmC4to7c_aem_pCqExaOvFUPs5hRWLxd6ww&e=AT1NuP1ln66bLsGK0DajwOTlyv0GSRoZNYdLN3Kz8snYcXyAEaLc5S7WYfNUczmvuwwjQmqWDQpWtPkiUBRQH3zQzZ1pfy_WdpQt98Fs2A", label: "YouTube" },
 ]
 
 export function Footer() {

@@ -71,14 +71,7 @@ export function Navbar() {
         >
           {/* --- LOGO ALANI --- */}
           <a href="#hero" className="flex items-center gap-3 group">
-            <div className="relative flex h-10 w-10 items-center justify-center rounded bg-[#fdfbf7]/5 border border-[#fdfbf7]/10 group-hover:border-[#f97316]/50 transition-colors">
-              <Rocket className="h-5 w-5 text-[#fdfbf7] group-hover:text-[#f97316] transition-colors" />
-              {/* Status Işığı */}
-              <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
-              </span>
-            </div>
+            
             <div className="flex flex-col">
                 <span className="font-heading text-lg font-bold tracking-tight text-[#fdfbf7] leading-none">KUTAY</span>
                 <span className="font-mono text-[10px] tracking-widest text-[#fdfbf7]/50">AEROSPACE</span>
