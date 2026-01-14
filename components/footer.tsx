@@ -31,10 +31,8 @@ export function Footer() {
           <div className="grid gap-12 md:grid-cols-3">
             {/* Left: Logo/Text */}
             <div className="flex items-center gap-3 md:justify-start">
-              <div className="flex h-10 w-10 items-center justify-center rounded border border-[#fdfbf7]/20">
-                <Rocket className="h-5 w-5 text-[#fdfbf7]" />
-              </div>
-              <span className="font-heading text-lg font-semibold text-[#fdfbf7]">Kutay Roket Takımı</span>
+              
+              <span className="font-heading text-lg font-semibold text-[#fdfbf7]">Kutay Aeorspace</span>
             </div>
 
             {/* Center: Quick Links */}
