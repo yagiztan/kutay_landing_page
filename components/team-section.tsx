@@ -88,11 +88,11 @@ const teamsData = {
     members: [
       {
         id: "STR-01",
-        name: "Muzaffer Şen",
-        role: "Yapısal Lider",
-        department: "Mekanik",
-        image: "/Muzaffer şen.jpeg",
-        linkedin: "",
+        name: "Abdülkadir Tunçbilek",
+        role: "Takım Kaptanı",
+        department: "Yönetim",
+        image: "/Abdulkadir.png",
+        linkedin: "https://www.linkedin.com/in/abd%C3%BClkadir-tun%C3%A7bilek-822117247/",
         website: "",
         nsosyal: "",
       },
