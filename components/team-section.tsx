@@ -98,12 +98,22 @@ const teamsData = {
       },
       {
         id: "SW-01",
-        name: "Yağız Muhammed Tan",
+        name: "Ramazan Can Yalçın",
+        role: "Mekanik Kaptanı",
+        department: "Mekanik",
+        image: "/ramazan.png",
+        linkedin: "https://www.linkedin.com/in/ramazan-can-yalçin/",
+        website: "",
+        nsosyal: "",
+      },
+      {
+        id: "PRP-01",
+        name: "Koray Kulalar",
         role: "Mekanik Tasarım",
         department: "Mekanik",
-        image: "/Yagiz_m_Tan.jpg",
-        linkedin: "https://www.linkedin.com/in/ya%C4%9F%C4%B1z-muhammed-tan-1b0154322",
-        website: "https://www.yagizmtan.com/",
+        image: "/koray.png",
+        linkedin: "https://www.linkedin.com/in/koray-kulalar-598ba4289/",
+        website: "",
         nsosyal: "",
       },
     ]
@@ -114,24 +124,15 @@ const teamsData = {
     members: [
       {
         id: "PRP-01",
-        name: "Hüdaverdi Furkan Demirci",
-        role: "Aviyonik Lider",
+        name: "Berat Kadir Kışhan",
+        role: "Takım Kaptanı",
         department: "Aviyonik",
-        image: "/Hüdaverdi Furkan Demirci.jpeg",
-        linkedin: "",
+        image: "/berat.png",
+        linkedin: "https://www.linkedin.com/in/berat-kadir-k%C4%B1%C5%9Fhan-47a6aa249/",
         website: "",
         nsosyal: "",
       },
-      {
-        id: "SIM-01",
-        name: "Arzu Sümeyye Çiftçi",
-        role: "Yazılım Geliştirici",
-        department: "Yazılım",
-        image: "/Arzu Sümeyye çiftçi.jpeg",
-        linkedin: "",
-        website: "",
-        nsosyal: "",
-      },
+      
     ]
   }
 }
