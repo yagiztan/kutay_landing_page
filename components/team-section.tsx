@@ -82,16 +82,6 @@ const teamsData = {
         nsosyal: "https://nsosyal.com/kaan_gul",
       },
       {
-        id: "AVN-02",
-        name: "Sude Nur Eynel ",
-        role: "Aviyonik",
-        department: "Aviyonik",
-        image: "/sude_nur.jpeg",
-        linkedin: "https://www.linkedin.com/in/borac%C3%BCneytak%C3%A7ak%C4%B1n/",
-        website: "",
-        nsosyal: "",
-      },
-      {
         id: "PRP-03",
         name: "Sinem Özübek",
         role: "Aviyonik",
@@ -101,6 +91,17 @@ const teamsData = {
         website: "https://github.com/sinemozubek",
         nsosyal: "",
       },
+      {
+        id: "AVN-02",
+        name: "Sude Nur Eynel ",
+        role: "Aviyonik",
+        department: "Aviyonik",
+        image: "/sude_nur.jpeg",
+        linkedin: "https://www.linkedin.com/in/borac%C3%BCneytak%C3%A7ak%C4%B1n/",
+        website: "",
+        nsosyal: "",
+      },
+      
       {
         id: "SW-02",
         name: "Sultan Aslan",
