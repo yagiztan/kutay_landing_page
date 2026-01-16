@@ -12,7 +12,7 @@ const teamsData = {
     members: [
       {
         id: "CMD-01",
-        name: "Mehmet Alper Demiray",
+        name: "Dr. Mehmet Alper Demiray",
         role: "Takım Danışmanı",
         department: "Danışman",
         image: "/Mehmet Alper Demiray - Akdemik Danışman.jpeg",
@@ -41,16 +41,6 @@ const teamsData = {
         nsosyal: "",
       },
       {
-        id: "SW-01",
-        name: "Yağız Muhammed Tan",
-        role: "Mekanik Tasarım",
-        department: "Mekanik",
-        image: "/Yagiz_m_Tan.jpg",
-        linkedin: "https://www.linkedin.com/in/ya%C4%9F%C4%B1z-muhammed-tan-1b0154322",
-        website: "https://www.yagizmtan.com/",
-        nsosyal: "https://nsosyal.com/yagiztan",
-      },
-      {
         id: "PRP-01",
         name: "Hüdaverdi Furkan Demirci",
         role: "Aviyonik Lider",
@@ -60,6 +50,17 @@ const teamsData = {
         website: "",
         nsosyal: "",
       },
+      {
+        id: "SW-01",
+        name: "Yağız Muhammed Tan",
+        role: "Mekanik Tasarım",
+        department: "Mekanik",
+        image: "/Yagiz_m_Tan.jpg",
+        linkedin: "https://www.linkedin.com/in/ya%C4%9F%C4%B1z-muhammed-tan-1b0154322",
+        website: "https://www.yagizmtan.com/",
+        nsosyal: "https://nsosyal.com/yagiztan",
+      },
+      
       {
         id: "SIM-01",
         name: "Arzu Sümeyye Çiftçi",
