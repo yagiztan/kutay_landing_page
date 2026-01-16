@@ -8,7 +8,7 @@ import { Linkedin, QrCode, Globe } from "lucide-react"
 const teamsData = {
   kutay: {
     title: "Kutay Roket Takımı",
-    description: "Yüksek irtifa ve ileri itki sistemleri üzerine çalışan ana roket takımımız.",
+    description: "Teknofest A3 Yüksek irtifa kategorisi üzerine çalışan ana roket takımımız.",
     members: [
       {
         id: "CMD-01",
@@ -110,11 +110,21 @@ const teamsData = {
         website: "",
         nsosyal: "",
       },
+      {
+        id: "SW-03",
+        name: "Yusuf Ziya Yıldırım",
+        role: "Mekanik Tasarım",
+        department: "Mekanik",
+        image: "/yusuf.jpeg",
+        linkedin: "https://www.linkedin.com/in/yusuf-ziya-y%C4%B1ld%C4%B1r%C4%B1m-327a02313?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        website: "",
+        nsosyal: "",
+      },
     ]
   },
   gokay: {
     title: "Gökay Roket Takımı",
-    description: "Orta irtifa görevleri ve otonom sistemler geliştiren alt ekibimiz.",
+    description: "Teknofest A2 kategorisi için roket geliştiren Orta İrtifa alt ekibimiz.",
     members: [
       {
         id: "STR-01",
@@ -160,7 +170,7 @@ const teamsData = {
   },
   doruk: {
     title: "Doruk Roket Takımı",
-    description: "Alçak irtifa testleri ve eğitim simülasyonlarından sorumlu ekibimiz.",
+    description: "Teknofest A2 kategorisi için roket geliştiren Orta İrtifa alt ekibimiz.",
     members: [
       {
         id: "PRP-01",

@@ -71,11 +71,7 @@ export function Navbar() {
         >
           {/* --- LOGO ALANI --- */}
           <a href="#hero" className="flex items-center gap-3 group">
-            
-            <div className="flex flex-col">
-                <span className="font-heading text-lg font-bold tracking-tight text-[#fdfbf7] leading-none">KUTAY</span>
-                <span className="font-mono text-[10px] tracking-widest text-[#fdfbf7]/50">AEROSPACE</span>
-            </div>
+            <img src="/kutay_logo.png" alt="KUTAY Logo" className="h-10 w-auto" />
           </a>
 
           {/* --- DESKTOP MENU --- */}

@@ -31,8 +31,7 @@ export function Footer() {
           <div className="grid gap-12 md:grid-cols-3">
             {/* Left: Logo/Text */}
             <div className="flex items-center gap-3 md:justify-start">
-              
-              <span className="font-heading text-lg font-semibold text-[#fdfbf7]">Kutay Aeorspace</span>
+              <img src="/kutay_logo.png" alt="Kutay Logo" className="h-10 w-auto" />
             </div>
 
             {/* Center: Quick Links */}
@@ -66,7 +65,7 @@ export function Footer() {
 
           <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-[#fdfbf7]/10 pt-8 md:flex-row">
             <p className="font-mono text-xs text-[#fdfbf7]/30">
-              © {new Date().getFullYear()} Kutay Roket Takımı. All rights reserved.
+              © {new Date().getFullYear()} Kutay Aerospace. All rights reserved.
             </p>
             <div className="flex items-center gap-2">
               <div className="h-2 w-2 animate-pulse rounded-full bg-[#22c55e]" />

@@ -35,7 +35,7 @@ const features = [
     value: "Kompozit",
     isText: true, // Bu sayısal değil, metin
     label: "GÖVDE YAPISI",
-    description: "Fiber Glass & Karbon Fiber.",
+    description: "Fiber Glass",
     colSpan: "col-span-1",
   },
   {

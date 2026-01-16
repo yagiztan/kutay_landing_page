@@ -55,9 +55,9 @@ export function HeroSection() {
         {/* Sol Alt */}
         <div className="flex items-end justify-between">
             <div className="hidden sm:block">
-                <span>LAT: 37.9135° N</span>
+                <span>LAT: 37.8296° N</span>
                 <br />
-                <span>LON: 27.8423° E</span>
+                <span>LON: 30.5256° E</span>
             </div>
             {/* Sağ Alt */}
             <div className="flex items-center gap-2 text-[#fdfbf7]/60">
@@ -109,7 +109,7 @@ export function HeroSection() {
         >
           Mühendisliğin sınırlarını zorluyor, gökyüzünün ötesini hedefliyoruz. 
           <span className="block mt-2 font-mono text-xs text-[#fdfbf7]/50 tracking-widest uppercase">
-            // High Altitude Rocketry Systems
+             Hıgh Altıtude Rocketry Systems
           </span>
         </motion.p>
 
