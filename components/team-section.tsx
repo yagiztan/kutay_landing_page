@@ -189,7 +189,7 @@ const teamsData = {
         name: "Mehmet SAFA",
         role: "Kurtarma",
         department: "Mekanik",
-        image: "/placeholder.svg",
+        image: "/mehmet.jpeg",
         linkedin: "https://www.linkedin.com/in/mehmet-safa-05031b39a/",
         website: "",
         nsosyal: "",
