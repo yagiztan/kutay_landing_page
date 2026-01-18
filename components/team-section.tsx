@@ -174,7 +174,7 @@ const teamsData = {
         role: "Aviyonik",
         department: "Aviyonik",
         image: "/ahmet.jpeg",
-        linkedin: "https://www.linkedin.com/in/koray-kulalar-598ba4289/",
+        linkedin: "https://www.linkedin.com/in/ahmet-sezen-18b9373a6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         website: "",
         nsosyal: "",
       },
