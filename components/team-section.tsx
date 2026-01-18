@@ -211,7 +211,7 @@ const teamsData = {
         role: "Mekanik",
         department: "Mekanik",
         image: "/yunus.png",
-        linkedin: "",
+        linkedin: "http://linkedin.com/in/yunus-emre-akkuş-19a9a1330",
         website: "",
         nsosyal: "",
       },
