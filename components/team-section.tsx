@@ -168,6 +168,16 @@ const teamsData = {
         website: "",
         nsosyal: "",
       },
+      {
+        id: "PRP-03",
+        name: "Ahmet Sezen",
+        role: "Aviyonik",
+        department: "Aviyonik",
+        image: "/ahmet.jpeg",
+        linkedin: "https://www.linkedin.com/in/koray-kulalar-598ba4289/",
+        website: "",
+        nsosyal: "",
+      },
     ]
   },
   doruk: {

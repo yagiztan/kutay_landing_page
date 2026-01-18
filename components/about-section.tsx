@@ -87,9 +87,7 @@ export function AboutSection() {
             </h2>
             
             <p className="text-lg leading-relaxed text-[#fdfbf7]/70 mb-8 max-w-xl">
-              Kutay Roket Takımı olarak, sadece roket tasarlamıyor; disiplinler arası 
-              mühendislik pratikleriyle Türkiye'nin havacılık ekosistemine nitelikli 
-              AR-GE çözümleri üretiyoruz.
+              Süleyman Demirel Üniversitesi Mühendislik ve Doğa Bilimleri Fakültesi öğrencilerinden oluşan bir ekip olarak, disiplinler arası iş birliğiyle roket sistemleri geliştirmek ve bu süreçte mekanik tasarım, aviyonik, uçuş sistemleri ve aerodinamik alanlarında nitelikli mühendislik çalışmaları yürütmektir. TEKNOFEST Roket Yarışması’nı temel hedef alarak, teorik bilgiyi uygulamaya dönüştüren, teknik doğruluğu ve mühendislik disiplinini esas alan projeler üretmeyi; elde edilen çıktılarla ülkemizin uzay ve roket teknolojileri alanındaki gelişimine katkı sağlamayı amaçlıyoruz.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 text-sm font-mono text-[#fdfbf7]/60">
