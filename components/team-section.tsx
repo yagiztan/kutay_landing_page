@@ -101,17 +101,6 @@ const teamsData = {
         website: "",
         nsosyal: "",
       },
-      
-      {
-        id: "SW-02",
-        name: "Sultan Aslan",
-        role: "Mekanik Tasarım",
-        department: "Mekanik",
-        image: "/sultan.jpeg",
-        linkedin: "https://www.linkedin.com/in/ya%C4%9F%C4%B1z-muhammed-tan-1b0154322",
-        website: "",
-        nsosyal: "",
-      },
       {
         id: "SW-03",
         name: "Yusuf Ziya Yıldırım",
@@ -122,6 +111,18 @@ const teamsData = {
         website: "",
         nsosyal: "",
       },
+      
+      {
+        id: "SW-02",
+        name: "Sultan Aslan",
+        role: "Mekanik Tasarım",
+        department: "Mekanik",
+        image: "/sultan.jpeg",
+        linkedin: "https://www.linkedin.com/in/sultan-aslan-88957529a/",
+        website: "",
+        nsosyal: "",
+      },
+      
     ]
   },
   gokay: {
