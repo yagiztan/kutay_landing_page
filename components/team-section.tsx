@@ -205,6 +205,16 @@ const teamsData = {
         website: "",
         nsosyal: "",
       },
+      {
+        id: "PRP-06",
+        name: "Yunus emre akkuş",
+        role: "Mekanik",
+        department: "Mekanik",
+        image: "/yunus.png",
+        linkedin: "",
+        website: "",
+        nsosyal: "",
+      },
       
     ]
   }
