@@ -122,6 +122,16 @@ const teamsData = {
         website: "",
         nsosyal: "",
       },
+      {
+        id: "SIM-05",
+        name: "Aysu Aydoğdu",
+        role: "Aviyonik",
+        department: "Aviyonik",
+        image: "/aysu.png",
+        linkedin: "https://www.linkedin.com/in/aysu-aydo%C4%9Fdu-320736288?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+        website: "",
+        nsosyal: "",
+      },
       
     ]
   },
@@ -179,11 +189,21 @@ const teamsData = {
         website: "",
         nsosyal: "",
       },
+      {
+        id: "PRP-04",
+        name: "Mirbengi Ünsal ",
+        role: "Mekanik Tasarım",
+        department: "Mekanik",
+        image: "/placeholder.svg",
+        linkedin: "",
+        website: "",
+        nsosyal: "",
+      },
     ]
   },
   doruk: {
     title: "Doruk Roket Takımı",
-    description: "Teknofest A2 kategorisi için roket geliştiren Orta İrtifa alt ekibimiz.",
+    description: "Teknofest A3 kategorisi için roket geliştiren Yüksek İrtifa alt ekibimiz.",
     members: [
       {
         id: "PRP-01",
