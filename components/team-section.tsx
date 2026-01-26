@@ -235,6 +235,26 @@ const teamsData = {
         website: "",
         nsosyal: "",
       },
+      {
+        id: "PRP-09",
+        name: "Feriha Şavklı",
+        role: "Aviyonik",
+        department: "Aviyonik",
+        image: "/feriha.jpeg",
+        linkedin: "https://www.linkedin.com/in/feriha-%C5%9Favkl%C4%B1-5a5b97217/",
+        website: "",
+        nsosyal: "",
+      },
+      {
+        id: "PRP-010",
+        name: "Mehmet Efe Yılmaz",
+        role: "Mekanik",
+        department: "Mekanik",
+        image: "/yunus.png",
+        linkedin: "http://linkedin.com/in/yunus-emre-akkuş-19a9a1330",
+        website: "",
+        nsosyal: "",
+      },
       
     ]
   }
