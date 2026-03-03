@@ -23,7 +23,7 @@ function Counter({ value }: { value: number }) {
 const features = [
   {
     icon: Target,
-    value: 8330, // Sayısal değer (Animasyon için)
+    value: 9702, // Sayısal değer (Animasyon için)
     suffix: "m",
     label: "HEDEF İRTİFA",
     description: "Yüksek irtifa kategorisinde sınırları zorluyoruz.",

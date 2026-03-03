@@ -62,16 +62,6 @@ const teamsData = {
       },
       
       {
-        id: "SIM-01",
-        name: "Arzu Sümeyye Çiftçi",
-        role: "Yazılım Geliştirici",
-        department: "Aviyonik",
-        image: "/Arzu Sümeyye çiftçi.jpeg",
-        linkedin: "https://www.linkedin.com/in/arzu-s%C3%BCmeyye-%C3%A7ift%C3%A7i-2867b3265/",
-        website: "",
-        nsosyal: "",
-      },
-      {
         id: "SIM-02",
         name: "Kaan GÜL",
         role: "Yazılım Geliştirici",
@@ -341,7 +331,7 @@ export function TeamSection() {
                         <p className="text-[#fdfbf7]/60 font-light">{teamsData[activeTab as keyof typeof teamsData].description}</p>
                     </div>
 
-                    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
+                    <div className="grid gap-8 sm:grid-cols-3 lg:grid-cols-4 justify-items-center">
                     {teamsData[activeTab as keyof typeof teamsData].members.map((member) => (
                         <div
                         key={member.id}
